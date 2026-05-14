@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Sora", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-aura-gain: #ff198b;
+  --color-aura-deep: #d81b60;
+  --color-aura-light: #ff4081;
+  --color-aura-bg: #000;
+  --color-aura-input: #111;
+}
+
+@layer base {
+  body {
+    @apply bg-aura-bg text-white font-sans antialiased overflow-hidden select-none;
+  }
+}
+
+@keyframes orbFloat {
+  from { transform: translate(0, 0); }
+  to { transform: translate(30px, 30px); }
+}
+
+@keyframes btnPulse {
+  0%, 100% { box-shadow: 0 0 32px rgba(255,25,139,0.45), 0 0 64px rgba(255,25,139,0.2); }
+  50% { box-shadow: 0 0 48px rgba(255,25,139,0.7), 0 0 90px rgba(255,25,139,0.35); }
+}
+
+.animate-orb {
+  animation: orbFloat 8s ease-in-out infinite alternate;
+}
+
+.animate-btn-pulse {
+  animation: btnPulse 3s ease-in-out infinite;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
